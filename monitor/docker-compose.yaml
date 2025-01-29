@@ -1,0 +1,27 @@
+volumes:
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: local-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data:/prometheus
+    restart: unless-stopped
+    network_mode: host
+
+  grafana:
+    image: grafana/grafana-oss:11.2.0-ubuntu
+    container_name: local-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+    network_mode: host
