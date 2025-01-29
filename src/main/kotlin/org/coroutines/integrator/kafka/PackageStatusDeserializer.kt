@@ -1,7 +1,7 @@
 package org.coroutines.integrator.kafka
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import org.coroutines.integrator.entities.PackageStatus
+import org.coroutines.integrator.types.PackageStatus
 import org.apache.kafka.common.serialization.Deserializer
 import org.slf4j.LoggerFactory
 import kotlin.text.Charsets.UTF_8

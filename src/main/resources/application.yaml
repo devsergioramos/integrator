@@ -29,3 +29,5 @@ kafka-topics:
 logging:
   level:
     root: INFO
+    org.coroutines.integrator.kafka: DEBUG
+    org.coroutines.integrator.service: TRACE

@@ -2,7 +2,7 @@ package org.coroutines.integrator.kafka
 
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
-import org.coroutines.integrator.entities.PackageStatus
+import org.coroutines.integrator.types.PackageStatus
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -15,7 +15,7 @@ import org.springframework.kafka.listener.ContainerProperties
 
 @EnableKafka
 @Configuration
-class Configuration(
+class KafkaConfig(
     @Value("\${spring.kafka.bootstrap-servers}") private val bootstrapServers: String,
     @Value("\${spring.kafka.consumer.group-id}") private val groupId: String,
     @Value("\${spring.kafka.consumer.auto-offset-reset}") private val autoOffsetReset: String

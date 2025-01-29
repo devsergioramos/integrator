@@ -1,4 +1,4 @@
-package org.coroutines.integrator.entities
+package org.coroutines.integrator.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
