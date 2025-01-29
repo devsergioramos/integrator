@@ -39,5 +39,5 @@ out/
 ### Kotlin ###
 .kotlin
 
-data/*
-!data/
+/monitor/data/*
+/monitor/!data/
