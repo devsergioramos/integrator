@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: integrator
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: test
+      auto-offset-reset: latest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+
+server:
+  port: 8000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+kafka-topics:
+  package-status:
+    topic: "dbserver1.public.package_status"
+
+logging:
+  level:
+    root: INFO
