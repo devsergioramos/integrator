@@ -1,10 +1,9 @@
 spring:
+  application:
+    name: integrator-test
   kafka:
-    bootstrap-servers: ${spring.embedded.kafka.brokers}
+    bootstrap-servers: localhost:9092
     consumer:
-      group-id: test-group
-      auto-offset-reset: earliest
-
-kafka-topics:
-  package-status:
-    topic: test.package-status
+      group-id: local-test
+      auto-offset-reset: latest
+      enable-auto-commit: false

@@ -38,6 +38,9 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.springframework.batch:spring-batch-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
+    testImplementation("org.mockito:mockito-core:5.5.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
@@ -49,4 +52,9 @@ kotlin {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+    systemProperty("junit.jupiter.extensions.autodetection.enabled", "true")
+    systemProperty("junit.jupiter.testinstance.lifecycle.default", "per_class")
 }

@@ -13,8 +13,8 @@ import org.coroutines.integrator.domain.NetworkResult
 import org.coroutines.integrator.types.StatusDataSource
 
 class OkHttpStatusDataSource(
-    private val client: OkHttpClient,
-    private val jsonMediaType: MediaType?
+    val client: OkHttpClient,
+    val jsonMediaType: MediaType?
 ) : StatusDataSource {
 
     override suspend fun sendStatus(endpoint: ClientEndpoint, json: String): NetworkResult<String> {
