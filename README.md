@@ -37,6 +37,9 @@ graph LR
     I --> C3[Client 3 API]
 ```
 
+## Demonstração em Vídeo 🎥
+[![Assista à Demonstração](https://img.youtube.com/vi/VIdzFmIZtF4/0.jpg)](https://www.youtube.com/live/VIdzFmIZtF4?si=Q5lI6HOGIzdmuZPn)
+
 ## Projeto Integrator
 
 ### Componentes Principais:
