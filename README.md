@@ -1,4 +1,4 @@
-# Async Integrator with Kotlin Coroutines 🚀
+# Async Integrator Kotlin Coroutines 🚀
 
 Projeto demonstrativo de integração assíncrona utilizando **Kotlin Coroutines** e **Spring Boot**, focado em resolver problemas de latência em sistemas distribuídos.
 
@@ -12,10 +12,10 @@ Demonstrar como as corrotinas do Kotlin podem ser utilizadas para:
 
 ## Integração com o CDC (Change Data Capture) Producer 🔗
 Este projeto (**Integrator**) é a **PARTE 2** do artigo técnico publicado no Medium:  
-[**Coroutines: Performance de aplicações em cenários críticos de latência**](https://medium.com/@devsergioramos/coroutines-performance-de-aplica%C3%A7%C3%B5es-em-cen%C3%A1rios-cr%C3%ADticos-de-lat%C3%AAncia-uma-abordagem-pr%C3%A1tica-com-1ba5ff21cd9f)
+[**Coroutines: Performance de aplicações em cenários críticos de latência**](https://medium.com/@devsergioramos/coroutines-performance-de-aplica%C3%A7%C3%B5es-em-cen%C3%A1rios-cr%C3%ADticos-de-lat%C3%AAncia-uma-abordagem-pr%C3%A1tica-com-1ba5ff21cd9f){:target="_blank"}
 
 ### Contexto Completo da Solução
-**PARTE 1 - CDC Producer** ([Repositório GitHub](https://github.com/devsergioramos/cdc-event-driven-architecture-producer)):
+**PARTE 1 - CDC Producer** ([Repositório GitHub](https://github.com/devsergioramos/cdc-event-driven-architecture-producer){:target="_blank"}):
 - Implementação de um pipeline de dados usando:
     - PostgreSQL + Debezium para Change Data Capture
     - Kafka para streaming de eventos em tempo real
@@ -36,10 +36,6 @@ graph LR
     I --> C2[Client 2 API]
     I --> C3[Client 3 API]
 ```
-
-## Links úteis 🔗 
-* Repositório CDC Producer
-* Artigo Medium: Coroutines na Prática
 
 ## Projeto Integrator
 
@@ -127,7 +123,7 @@ try {
 ## Contribuição 🤝
 
 1. **Faça um Fork do Repositório**  
-   [Clique aqui](https://github.com/seu-usuario/integrator/fork) para criar seu fork
+   [Clique aqui](https://github.com/devsergioramos/integrator/fork){:target="_blank"} para criar seu fork
 
 2. **Crie uma Branch para sua Feature**
    ```bash
@@ -150,10 +146,10 @@ git pull upstream main
    * Impacto na performance
 
 ## Licença 📜
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT){:target="_blank"}
 
 **Mantenedor Principal**
-- [devsergioramos](https://github.com/devsergioramos)
+- [devsergioramos](https://github.com/devsergioramos){:target="_blank"}
 
 **Status do Projeto**  
 ![Active](https://img.shields.io/badge/status-active-brightgreen) 🔄  
