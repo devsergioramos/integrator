@@ -2,6 +2,7 @@
 
 Projeto demonstrativo de integração assíncrona utilizando **Kotlin Coroutines** e **Spring Boot**, focado em resolver problemas de latência em sistemas distribuídos.
 
+
 ## Objetivo do projeto Integrator 🎯
 Demonstrar como as corrotinas do Kotlin podem ser utilizadas para:
 - Reduzir a complexidade de operações assíncronas
@@ -20,23 +21,12 @@ Este projeto (**Integrator**) é a **PARTE 2** do artigo técnico publicado no M
     - Kafka para streaming de eventos em tempo real
     - Script Python para geração massiva de dados (10k+ eventos/sec)
 
-**PARTE 2 - Integrator** (Este projeto):
-- Consumo inteligente de mensagens do Kafka
-- Processamento assíncrono com Kotlin Coroutines
-- Chamadas HTTP otimizadas para APIs com diferentes perfis de latência
-- Monitoramento em tempo real com Micrometer/Prometheus
+**PARTE 2 - Integrator** (Este projeto)
 
-```mermaid
-graph TD
-    A[Artigo Medium] --> B[PARTE 1: CDC Producer]
-    A --> C[PARTE 2: Integrator]
-    B --> D((PostgreSQL))
-    B --> E((Kafka))
-    C --> E
-    C --> F{{APIs Client}}
-```
+## Arquitetura Geral 🏗️
+![img_1.png](./img_1.png)
 
-**Integração com o CDC (Change Data Capture) Producer**:
+**Diagrama estrutural PARTE 1 + PARTE 2**:
 ```mermaid
 graph LR
     P[(PostgreSQL)] --> D[Debezium]
@@ -47,13 +37,9 @@ graph LR
     I --> C3[Client 3 API]
 ```
 
-## Visão Arquitetura Geral 🏗️
-![img_1.png](./img_1.png)
-
 ## Links úteis 🔗 
 * Repositório CDC Producer
 * Artigo Medium: Coroutines na Prática
-
 
 ## Projeto Integrator
 
@@ -102,7 +88,6 @@ sequenceDiagram
 | Micrometer           | 1.12.x    | Monitoramento de métricas               |
 | JUnit 5              | 5.9.3     | Testes unitários e integração           |
 
-
 ## Como Funciona? ⚙️
 
 ### Princípios Chave
@@ -138,7 +123,6 @@ try {
 | `service.message.throughput` | Counter   | Volume de mensagens processadas por minuto |
 | `service.message.error`      | Counter   | Falhas em chamadas HTTP para APIs externas |
 | `kafka.consumer.lag`         | Gauge     | Atraso na leitura das mensagens do Kafka |
-
 
 ## Contribuição 🤝
 
