@@ -2,14 +2,41 @@
 
 Projeto demonstrativo de integração assíncrona utilizando **Kotlin Coroutines** e **Spring Boot**, focado em resolver problemas de latência em sistemas distribuídos.
 
-## Objetivo 🎯
+## Objetivo do projeto Integrator 🎯
 Demonstrar como as corrotinas do Kotlin podem ser utilizadas para:
 - Reduzir a complexidade de operações assíncronas
 - Melhorar o throughput em sistemas de alta concorrência
 - Minimizar a latência em chamadas de rede
 - Integrar eficientemente diferentes tecnologias (Kafka, HTTP APIs, Monitoramento)
 
-**Integração com o CDC Producer**:
+## Integração com o CDC (Change Data Capture) Producer 🔗
+Este projeto (**Integrator**) é a **PARTE 2** do artigo técnico publicado no Medium:  
+[**Coroutines: Performance de aplicações em cenários críticos de latência**](https://medium.com/@devsergioramos/coroutines-performance-de-aplica%C3%A7%C3%B5es-em-cen%C3%A1rios-cr%C3%ADticos-de-lat%C3%AAncia-uma-abordagem-pr%C3%A1tica-com-1ba5ff21cd9f)
+
+### Contexto Completo da Solução
+**PARTE 1 - CDC Producer** ([Repositório GitHub](https://github.com/devsergioramos/cdc-event-driven-architecture-producer)):
+- Implementação de um pipeline de dados usando:
+    - PostgreSQL + Debezium para Change Data Capture
+    - Kafka para streaming de eventos em tempo real
+    - Script Python para geração massiva de dados (10k+ eventos/sec)
+
+**PARTE 2 - Integrator** (Este projeto):
+- Consumo inteligente de mensagens do Kafka
+- Processamento assíncrono com Kotlin Coroutines
+- Chamadas HTTP otimizadas para APIs com diferentes perfis de latência
+- Monitoramento em tempo real com Micrometer/Prometheus
+
+```mermaid
+graph TD
+    A[Artigo Medium] --> B[PARTE 1: CDC Producer]
+    A --> C[PARTE 2: Integrator]
+    B --> D((PostgreSQL))
+    B --> E((Kafka))
+    C --> E
+    C --> F{{APIs Client}}
+```
+
+**Integração com o CDC (Change Data Capture) Producer**:
 ```mermaid
 graph LR
     P[(PostgreSQL)] --> D[Debezium]
@@ -20,13 +47,15 @@ graph LR
     I --> C3[Client 3 API]
 ```
 
+## Visão Arquitetura Geral 🏗️
+![img_1.png](./img_1.png)
+
 ## Links úteis 🔗 
 * Repositório CDC Producer
 * Artigo Medium: Coroutines na Prática
-* Dashboard Grafana Modelo
 
-## Arquitetura 🏗️
-![img_1.png](./img_1.png)
+
+## Projeto Integrator
 
 ### Componentes Principais:
 1. **Kafka Consumer** (Spring Kafka)
@@ -107,27 +136,8 @@ try {
 |------------------------------|-----------|----------------------------------------|
 | `service.message.latency`    | Timer     | Latência total desde consumo até confirmação |
 | `service.message.throughput` | Counter   | Volume de mensagens processadas por minuto |
-| `http.client.errors`         | Counter   | Falhas em chamadas HTTP para APIs externas |
+| `service.message.error`      | Counter   | Falhas em chamadas HTTP para APIs externas |
 | `kafka.consumer.lag`         | Gauge     | Atraso na leitura das mensagens do Kafka |
-
-
-### Fluxo de Processamento Otimizado
-```mermaid
-sequenceDiagram
-participant D as Debezium
-participant K as Kafka
-participant I as Integrator
-participant C as Client API
-
-    D->>K: Eventos CDC (package_status)
-    K->>I: Poll assíncrono (corrotinas)
-    I->>I: Processamento em lote
-    par para cada mensagem
-        I->>C: Chamada HTTP não-bloqueante
-        C-->>I: Resposta (300ms-30s)
-        I->>K: Commit offset
-    end
-```
 
 
 ## Contribuição 🤝
