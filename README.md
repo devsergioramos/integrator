@@ -12,8 +12,11 @@ Demonstrar como as corrotinas do Kotlin podem ser utilizadas para:
 
 ## Integração com o CDC (Change Data Capture) Producer 🔗
 Este projeto (**Integrator**) é a **PARTE 2** do artigo técnico publicado no Medium:  
-[**Coroutines: Performance de aplicações em cenários críticos de latência**](https://medium.com/@devsergioramos/coroutines-performance-de-aplica%C3%A7%C3%B5es-em-cen%C3%A1rios-cr%C3%ADticos-de-lat%C3%AAncia-uma-abordagem-pr%C3%A1tica-com-1ba5ff21cd9f){:target="_blank"}
-
+[**Coroutines: Performance de aplicações em cenários críticos de latência**](https://medium.com/@devsergioramos/coroutines-performance-de-aplica%C3%A7%C3%B5es-em-cen%C3%A1rios-cr%C3%ADticos-de-lat%C3%AAncia-uma-abordagem-pr%C3%A1tica-com-1ba5ff21cd9f)
+[**Coroutines: Performance de aplicações em cenários críticos de latência**](https://medium.com/@devsergioramos/coroutines-performance-de-aplica%C3%A7%C3%B5es-em-cen%C3%A1rios-cr%C3%ADticos-de-lat%C3%AAncia-uma-abordagem-pr%C3%A1tica-com-1ba5ff21cd9f){:target="_blank" rel="noopener noreferrer"}
+<a href="https://medium.com/@devsergioramos/coroutines-performance-de-aplica%C3%A7%C3%B5es-em-cen%C3%A1rios-cr%C3%ADticos-de-lat%C3%AAncia-uma-abordagem-pr%C3%A1tica-com-1ba5ff21cd9f" target="_blank" rel="noopener noreferrer">
+Artigo Medium - Parte 1
+</a>
 ### Contexto Completo da Solução
 **PARTE 1 - CDC Producer** ([Repositório GitHub](https://github.com/devsergioramos/cdc-event-driven-architecture-producer){:target="_blank"}):
 - Implementação de um pipeline de dados usando:
